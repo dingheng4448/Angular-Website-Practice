@@ -1,0 +1,11 @@
+<form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <div formArrayName="formArray" *ngFor="let tag of foodFormArray.controls; let i=index" class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" [id]="i" [formControlName]="i">
+            <label class="form-check-label" [for]="i">{{ foodTags[i] }}</label>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Choose for me!</button>
+    </div>
+</form>
