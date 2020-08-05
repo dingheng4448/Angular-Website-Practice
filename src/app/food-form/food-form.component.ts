@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-food-form',
@@ -15,7 +16,7 @@ export class FoodFormComponent {
     'Ramen', 'Soup'
   ];
   
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
     // Initialize FormArray for foodForm
     this.foodForm = this.formBuilder.group({
       formArray: new FormArray([])
@@ -38,7 +39,13 @@ export class FoodFormComponent {
     const selectedTags = this.foodForm.value.formArray
       .map((isSelected: boolean, index: number) => isSelected ? this.foodTags[index] : null)
       .filter((foodTag: string) => foodTag !== null);
-    console.log(selectedTags);
+
+    const foodQuery = "{ foodTags: " + JSON.stringify(selectedTags) + " }";
+    console.log(foodQuery);
+
+    this.apiService.postFoodQuery(foodQuery).subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }
