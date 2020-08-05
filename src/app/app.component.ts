@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Website-Practice';
-  isCollapsed = true;
 }
