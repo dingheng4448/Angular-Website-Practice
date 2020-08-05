@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
+This project is a website I made to practice Angular. It calls a REST API (another project I made to learn the Spring Boot framework) to fetch a random food suggestion based on the user-supplied filters.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
