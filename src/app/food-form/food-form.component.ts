@@ -40,7 +40,7 @@ export class FoodFormComponent {
       .map((isSelected: boolean, index: number) => isSelected ? this.foodTags[index] : null)
       .filter((foodTag: string) => foodTag !== null);
 
-    const foodQuery = "{ foodTags: " + JSON.stringify(selectedTags) + " }";
+    const foodQuery = "{ \"foodTags\": " + JSON.stringify(selectedTags) + " }";
     console.log(foodQuery);
 
     this.apiService.postFoodQuery(foodQuery).subscribe((data) => {

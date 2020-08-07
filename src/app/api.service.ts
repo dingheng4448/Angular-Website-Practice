@@ -16,7 +16,7 @@ export class ApiService {
       })
     };
 
-    return this.httpClient.post('http://127.0.0.1', foodQuery, httpOptions);
+    return this.httpClient.post('https://random-food-app-backend.herokuapp.com/api/randomfood', foodQuery, httpOptions);
   }
 
 }
