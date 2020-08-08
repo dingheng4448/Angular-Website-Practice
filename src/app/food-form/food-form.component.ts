@@ -46,6 +46,7 @@ export class FoodFormComponent {
 
     this.apiService.postFoodQuery(foodQuery).subscribe((data) => {
       console.log(data);
+      this.result = data;
     });
   }
 
