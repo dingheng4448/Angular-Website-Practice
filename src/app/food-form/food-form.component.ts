@@ -15,6 +15,7 @@ export class FoodFormComponent {
     'Italian', 'Japanese', 'Korean', 'Burgers', 'Nasi Lemak', 'Noodles', 'Pasta', 'Pizza',
     'Ramen', 'Soup'
   ];
+  result = null;
   
   constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
     // Initialize FormArray for foodForm

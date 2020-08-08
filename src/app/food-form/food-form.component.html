@@ -8,4 +8,10 @@
     <div class="text-center">
         <button class="btn btn-primary" type="submit">Choose for me!</button>
     </div>
+    <div class="text-center">
+        <p *ngIf="result != null">
+            You should eat {{ result.foodName }}!
+            Tags: {{ result.tags }}
+        </p>
+    </div>
 </form>
